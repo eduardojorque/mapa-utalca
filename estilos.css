@@ -1,0 +1,236 @@
+:root {
+    --primario: #30a074;
+    --secundario: #ff4400;
+    --enlace: #ff4400;
+    --fondo: #eeeeee;
+    --texto: #725e50;
+}
+
+/* Estilo opcional para una transición más suave */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+.numbered-icon {
+    background-color: var(--secundario);
+    border-radius: 50%;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+#dependencias {
+    margin-top: 160px; /* Para demostrar el desplazamiento */
+}
+
+    #dependencias h1 {
+        color: var(--texto);
+        /* padding: 80px 0 0 0; */
+    }
+.numero-dependencia {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; /* Puedes ajustar este valor para controlar el espacio entre columnas */
+    text-align: center;
+}
+    .numero-dependencia div {
+        background-color: #fff;
+        border-radius: 20px;
+        padding-bottom:10px;
+        margin-bottom: 10px;
+    }
+    .numero-dependencia span {
+        background-color: var(--primario);
+        border-radius: 20px 20px 0 0;
+        color: #fff;
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 5px 0;
+        width: 100%;
+    }
+    .numero-dependencia a {
+        color: var(--texto);
+        font-weight: bold;
+    }
+    .numero-dependencia article {
+        color: var(--texto);
+    }
+#encabezado {
+    background-color: #fff;
+}
+    #encabezado div.text-right {
+        padding: 10px 10px;
+    }
+    #encabezado  img{
+        max-width: 300px;
+        width: 100%;
+    }
+#logotipo {
+    background-color: #fff;
+}
+    #logotipo div.text-center {
+        padding: 30px 10px;
+    }
+
+    #logotipo img{
+        max-width: 400px;
+        width: 100%;
+    }
+#menu {
+    background-color: var(--primario);
+}
+    #menu nav {
+        color: #eeeeee;
+        display: flex;
+        justify-content: center;
+        padding: 15px 10px;
+    }
+    #menu nav img {
+        display: block;
+        margin-bottom: 5px;
+        width: 100%;
+        max-width: 17px;
+    }
+    #menu nav span {
+        padding: 0 25px;
+    }
+    #menu nav a {
+        color: #eeeeee;
+        text-decoration: none;
+    }
+
+.lista {
+    padding: 10px 0;
+}
+.lista img {
+    max-width: 50px;
+    display: block;
+}
+#modalinfo .modal-body {
+    background-color: var(--fondo);
+}
+
+#modal-titulo h2 {
+    color: var(--texto);
+    text-align: center;
+}
+
+#modal-titulo .fa-question-circle {
+    color: var(--secundario);
+    font-size: 42px;
+    text-align: center;
+}
+
+.modalinfo #modal-pie a{
+    color:var(--enlace);
+}
+.modalinfo-box  {
+    background-color: #fff;
+    /* border: var(--texto) solid 1px; */
+    border-radius: 20px;
+    color: var(--texto);
+    margin-bottom: 15px;
+    padding: 30px;
+} 
+.modalinfo-box a  {
+    color: var(--enlace);
+} 
+.modalinfo-box .fas  {
+    color: var(--secundario);
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.modal-content {
+    background-color: #eeeeee;
+}
+    .depen-titulo {
+        background-color: var(--primario);
+        color: #eeeeee;
+        padding: 20px 10px;
+        text-align: center;
+        margin-left: -18px;
+        margin-right: -18px;
+    }
+    .depen-parrafo {
+        color: var(--primario);
+        font-size: 18px;
+        text-align: center;
+        padding: 20px 10px;
+    }
+    .btn-secondary {
+        background-color: var(--primario);
+        border-color: var(--primario);
+    }
+.logo-recursos {
+    max-width: 200px;
+    width: 100%;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegúrate de que se superponga sobre otros elementos */
+    background-color: white; /* Fondo blanco para evitar transparencia */
+}
+
+
+/* PARA DISPOSITIVOS MÓVILES */
+/* Estilos específicos para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    .numero-dependencia {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px; /* Puedes ajustar este valor para controlar el espacio entre columnas */
+        text-align: left;
+    }
+        .numero-dependencia div {
+            background-color: #fff;
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: 10% 60% 30%;
+            gap: 5px;
+            padding: 5px 0 5px 0;
+            margin-bottom: 0;
+
+        }
+        .numero-dependencia span {
+            background-color: var(--primario);
+            border-radius: 50%;
+            color: #fff;
+            display:inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10 0;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+        }
+
+        .numero-dependencia a {
+            color:var(--texto);
+            font-weight: bold;
+            font-size: 15px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .numero-dependencia article {
+            color: var(--texto);
+            font-size: 14px;
+            padding: 0;
+        }
+        .numero-dependencia article b {
+            display: block;
+        }
+
+}

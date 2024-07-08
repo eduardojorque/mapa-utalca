@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" sizes="192x192" href="/img/ico_logo192.png">
+    <link rel="icon" sizes="512x512" href="/img/ico_logo512.png">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> -->
+    <title>Mapa de Accesibilidad</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+    <script src="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="manifest" href="/manifest.json">
+
+</head>
+<body>
+
+    <!-- Esta es la parte del header -->
+
+    <div class="container-fluid">
+        <!-- Encabezado para logotipo utalca -->
+        <div id="encabezado" class="row">
+            <div class="col-12">
+                <div class="text-right">
+                    <img  src="img/logo-utalca.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- Encabezado para logotipo corporativo -->
+        <div id="logotipo" class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <img src="img/logo-mapa-cafe.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú de navegación para información importante -->
+        <div id="menu" class="row">
+            <div class="col-12">
+                <nav id="sticky" class="text-center">
+                    <a href="#" data-toggle="modal" data-target="#modalinfo">
+                        <div>
+                            <img class="mx-auto" src="img/iconos/nav-ayuda.png" alt="">Ayuda
+                        </div>
+                    </a> <span>|</span> 
+                    <a href="#dependenciaMark">
+                        <div>
+                            <img class="mx-auto" src="img/iconos/nav-estrella.png" alt="">Dependencias
+                        </div>
+                    </a> <span>|</span>
+                    <a href="mailto:cima@utalca.cl">
+                        <div>
+                            <img class="mx-auto" src="img/iconos/nav-email.png" alt="">Contacto 
+                        </div>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Este es el mapa del proyecto -->
+    <div id="map" style="height: 70vh;"></div>
+
+    <div id="dependenciaMark"></div>
+
+    <!-- Este es el cuerpo del proyecto -->
+    <div class="container">
+        <div class="row">
+            <div id="dependencias" class="col-12 text-center">
+                <h1>Dependencias</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+
+                <!-- En este div iteran las dependencias de datos.js -->
+                <div id="data-container" class="numero-dependencia"></div>
+
+            </div>
+        </7div>
+    </div>
+
+    <!-- Modal Menu Nav-->
+    <div class="modal fade modalayuda" id="modalinfo" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img class="logo-recursos" src="img/logo-mapa-cafe.png" alt="">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-titulo" class="text-center">
+                        <i class="fas fa-question-circle"></i>
+                        <h2 id="modal-titulo">Ayuda</h2>
+                    </div>
+                    
+                    <p id="modal-descripcion"></p>
+                    <div class="modalinfo-box">
+                        <h5><i class="fas fa-map"> </i>¿Qué es el Mapa de Accesibilidad?</h5>
+                        <p>
+                            Es una cartografía web de diseño funcional y sintético que permite encontrar los recursos de accesibilidad establecidos en las diferentes dependencias a través de geolocalización con puntos numéricos referenciados.
+                        </p>
+                    </div>
+
+                    <div class="modalinfo-box">
+                        <h5><i class="fas fa-map-pin"> </i>¿Cómo funciona?</h5>
+                        <p>
+                            El dispositivo móvil solicita permiso de uso de geolocalización, al aceptar el permiso, siempre y cuando estés dentro del campus de la Universidad de Talca, Lircay se geo-referencia mostrando las diferentes dependencias del campus. 
+                        </p>
+                        <p>
+                            Cada una de las dependencias números dispuestas en el mapa es cliqueable y al hacer clic, se despliega un módulo que muestra los recursos de accesibilidad disponibles. Puedes navegar arrastrando el mapa en la pantalla para desplazarte por las diferentes dependencias.
+                        </p>
+                    </div>
+
+                    <div class="modalinfo-box">
+                        <h5><i class="fas fa-universal-access"> </i>Cuáles son los recursos de accesibilidad</h5>
+                        <p>
+                            Se establecieron 8 recursos de accesibilidad estandarizados en su primera etapa (v.1) estos recursos son:
+                            <ul>
+                                <li>Rampas</li>
+                                <li>Ascensores</li>
+                                <li>Entrada y Puertas Accesibles</li>
+                                <li>Baños Accesibles</li>
+                                <li>Señalización Clara y Accesible</li>
+                                <li>Puntos de Información Accesible</li>
+                                <li>Mobiliario Adaptado</li>
+                                <li>Estacionamiento para Personas con Discapacidad </li>
+                            </ul>
+                        </p>
+                    </div>
+
+                    <div class="modalinfo-box">
+                        <h5><i class="fas fa-mobile-alt"> </i>Descargar tu APP Progresiva</h5>
+                        <p>
+                            La Aplicación fue construida con tecnología PWA que permite optimizar los tiempos de carga y descarga la APP sin la necesidad de hacerlo a través de una store de google o apple. Esto la hace aún más escalable.
+                        </p>
+                        <b>PASOS PARA DESCARGAR</b>
+                        <ol>
+                                <li>Ingresar a Safari > Presiona Compartir > Busca Agregar a Inicio y listo</li>
+                                <li>Si estás en android</li>
+                        </ol>
+                    </div>
+
+                    <div class="modalinfo-box">
+                        <h5><i class="fas fa-mobile-alt"> </i>Soporte</h5>
+                        <p>
+                            Cualquier duda o sugerencia lo puedes hacer a través de nuestros correo electrónico. <a href="mailto:cima@utalca.cl">cima@utalca.cl</a>
+                        </p>
+                    </div>
+                    
+                    <div id="modal-cuerpo"></div>
+                    <div id="modal-pie"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <!-- Modal Carga Recursos-->
+    <div class="modal fade modalmapa" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img class="logo-recursos" src="img/logo-recurso.png" alt="">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- Acá estoy probando si este div me carga el contenido HTML de la función mostrarDatos -->
+                    <div id="contenido" class="row"></div>
+
+                </div>
+            </div> 
+        </div>
+    </div>
+    <script src="datos.js"></script>
+    <script src="mapa.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
