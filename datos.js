@@ -393,14 +393,14 @@ const datos = [
         id: 30, 
         nombre: [true, "Biblioteca Central"],
         descripcion: [true, ladescripcion],
-        rampa: [false, larampa], 
-        ascensores: [false, elascensor],
-        entradas: [false, lasentradas], 
-        banos: [false, losbanos],
-        senalizacion: [false, lasenalizacion],
-        puntoinfo: [false, lospuntos],
-        mobiliario: [false, elmobiliario],
-        estacionamiento: [false, elestacionamiento]
+        rampa: [true, larampa], 
+        ascensores: [true, elascensor],
+        entradas: [true, lasentradas], 
+        banos: [true, losbanos],
+        senalizacion: [true, lasenalizacion],
+        puntoinfo: [true, lospuntos],
+        mobiliario: [true, elmobiliario],
+        estacionamiento: [true, elestacionamiento]
     },
     {   
         id: 31, 
