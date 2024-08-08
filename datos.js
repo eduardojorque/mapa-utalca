@@ -183,7 +183,7 @@ const datos = [
     },
     {   
         id: 14, 
-        nombre: [true, "Edificio Prosperidad I (Salas 400)"],
+        nombre: [true, "Edificio Prosperidad II"],
         descripcion: [true, ladescripcion],
         rampa: [true, larampa],
         ascensores: [true, elascensor],
@@ -625,7 +625,7 @@ const datos = [
     },
     {   
         id: 48, 
-        nombre: [true, "Edificio Clínicas Odontológicas"],
+        nombre: [true, "Facultad de Odontología"],
         descripcion: [true, ladescripcion],
         rampa: [true, larampa], 
         ascensores: [false, elascensor],
@@ -768,7 +768,7 @@ const datos = [
     },
     {   
         id: 59, 
-        nombre: [true, "Salas de Postgrado, Facultad Cs. de la Salud"],
+        nombre: [true, "Clínicas Odontológicas"],
         descripcion: [true, ladescripcion],
         rampa: [true, larampa], 
         ascensores: [false, elascensor],
@@ -821,6 +821,19 @@ const datos = [
     {   
         id: 63, 
         nombre: [true, "Banco Santander"],
+        descripcion: [true, ladescripcion],
+        rampa: [true, larampa], 
+        ascensores: [true, elascensor],
+        entradas: [true, lasentradas], 
+        banos: [true, losbanos],
+        senalizacion: [true, lasenalizacion],
+        puntoinfo: [true, lospuntos],
+        mobiliario: [true, elmobiliario],
+        estacionamiento: [true, elestacionamiento]
+    },
+    {   
+        id: 67, 
+        nombre: [true, "Ciencias Básicas Biomédicas"],
         descripcion: [true, ladescripcion],
         rampa: [true, larampa], 
         ascensores: [true, elascensor],

@@ -66,13 +66,14 @@ var markers = [
     { coords: [-35.405800, -71.635800], number: 57, modal: '.modalmapa', id: 57 },
     { coords: [-35.404750, -71.636520], number: 56, modal: '.modalmapa', id: 56 },
     { coords: [-35.406590, -71.637000], number: 58, modal: '.modalmapa', id: 58 },
-    { coords: [-35.405291, -71.638800], number: 59, modal: '.modalmapa', id: 59 },
+    { coords: [-35.405491, -71.638300], number: 59, modal: '.modalmapa', id: 59 },
     { coords: [-35.404435, -71.636764], number: 60, modal: '.modalmapa', id: 60 },
     { coords: [-35.406403, -71.637620], number: 61, modal: '.modalmapa', id: 61 },
     { coords: [-35.405599, -71.636350], number: 62, modal: '.modalmapa', id: 62 },
     { coords: [-35.405424, -71.637350], number: 63, modal: '.modalmapa', id: 63 },
     { coords: [-35.405581, -71.630417], number: 65, modal: '.modalmapa', id: 65 },
-    { coords: [-35.404443, -71.630150], number: 66, modal: '.modalmapa', id: 66 }
+    { coords: [-35.404443, -71.630150], number: 66, modal: '.modalmapa', id: 66 },
+    { coords: [-35.405826, -71.638557], number: 67, modal: '.modalmapa', id: 67 }
 ];
 
 
